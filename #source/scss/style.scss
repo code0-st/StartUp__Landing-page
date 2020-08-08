@@ -54,6 +54,46 @@ $md4: 480;
 @import '_header';
 @import '_footer';
 
+.block-title {
+	text-align: center;
+	&__title {
+		position: relative;
+
+		color: #555555;
+		font-family: Montserrat;
+		font-size: 20px;
+		font-weight: 700;
+		line-height: 24px;
+		text-transform: uppercase;
+
+		margin-bottom: 55px;
+
+		&:after {
+			content: '';
+			position: absolute;
+
+			top: 200%;
+			left: 50%;
+			transform: translate(-50%, 0);
+
+			width: 50px;
+			height: 2px;
+			background-color: #555555;
+		}
+
+		@media (max-width: $md1+px) {
+			font-size: 24px;
+		}
+	}
+	&__text {
+		color: #555555;
+		font-family: "Roboto Slab";
+		font-size: 16px;
+		font-weight: 400;
+		line-height: 24px;
+	}
+}
+
 // << СТИЛИ ПОСТОЯННЫХ БЛОКОВ >>=======================================================================================================================================
 
 // << ОСНОВНАЯ ЧАСТЬ >>================================================================================================================================================
@@ -64,6 +104,12 @@ $md4: 480;
 		display: flex;
 		min-height: 100vh;
 		width: 100%;
+
+		margin-bottom: 100px;
+
+		@media (max-width: $md1+px) {
+			margin-bottom: 70px;
+		}
 	}
 	.home__bg {
 		position: absolute;
@@ -179,8 +225,95 @@ $md4: 480;
 		}
 	}
 
-	// < название блока >==============================================================================================================================================
+	// < SERVICE >==============================================================================================================================================
 
+	.service {
+	}
+	.service__block-title {
+		margin-bottom: 70px;
+	}
+
+	.service__row {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+
+		@media (max-width: 750px) {
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+	}
+	.service__column {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.column {
+		flex: 1 1 33.333%;
+		text-align: center;
+		&__icon {
+			width: 90px;
+			height: 90px;
+			border: 2px solid #dddddd;
+			background-color: #ffffff;
+
+			border-radius: 50%;
+
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			color: #c0301c;
+			font-weight: 700;
+			font-size: 40px;
+
+			margin-bottom: 29px;
+
+			&.active {
+				background-color: #c0301c;
+				color: #fff;
+			}
+		}
+		&__title {
+			color: #555555;
+			font-family: Montserrat;
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 24px;
+			text-transform: uppercase;
+
+			margin-bottom: 24px;
+
+			@media (max-width: $md1+px) {
+				font-size: 16px;
+				font-weight: 700;
+			}
+		}
+		&__text {
+			color: #555555;
+			font-family: "Roboto Slab";
+			font-size: 14px;
+			font-weight: 400;
+			line-height: 24px;
+		}
+
+		@media (max-width: $md1+px) {
+			flex: 0 1 30%;
+		}
+
+		@media (max-width: 750px) {
+			margin-bottom: 30px;
+			flex: 0 1 45% ;
+		}
+		@media (max-width: 580px) {
+			flex: 0 1 80%;
+			margin-bottom: 65px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
 
 
 	// < название блока >==============================================================================================================================================
